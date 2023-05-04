@@ -4,7 +4,15 @@ class Tarefa  {
 
     constructor(){
         this.#ul = document.querySelector(".container");
-        this.#elemento = this.#elemento
+        this.#elemento = this.#elemento;
+        this.verificarUl();
+    }
+
+    verificarUl(){
+        if(this.buscaUl.innerHTML === "" && this.buscaElemento.length == 0){
+            const verifica = this.buscaUl.innerHTML= "Nenhuma tarefa adicionada";
+            return verifica;
+        }
     }
 
     pegarValor(){
@@ -16,13 +24,14 @@ class Tarefa  {
             this.adicionar(valor);
             this.criarView();
             this.limparCampo(valor, input);
+            this.verificarUl();
         }else {
             this.validaCampo(valor);
         }
     }
 
     adicionar(input){
-        this.#elemento.push({itemTarefa: input});
+        this.buscaElemento.push({itemTarefa: input});
     }
 
     criarView(){
@@ -30,10 +39,8 @@ class Tarefa  {
         this.buscaElemento.forEach((itemElemento, indexElemento) => {
             this.buscaUl.innerHTML += `
                 <li>
-                    <div class="lista">
-                        <img class="logo-concluir" src="/assets/img/verificar.png" onClick="concluir()" alt="logo-concluir">
-                        <span>${itemElemento.itemTarefa}</span>
-                    </div>
+                    <img class="logo-concluir" src="/assets/img/verificar.png" onClick="concluir()" alt="logo-concluir">
+                    <span>${itemElemento.itemTarefa}</span>
                     <img class="logo-excluir" src="/assets/img/excluir.png" onClick="excluir(${indexElemento})" alt="logo-excluir">
                 </li>
             `
@@ -83,5 +90,6 @@ form.addEventListener("submit", (evento) => {
 function excluir(posicao){
     tarefa.buscaElemento.splice(posicao, 1);
     console.log(tarefa.buscaElemento)
-    tarefa.criarView()
+    tarefa.criarView();
+    tarefa.verificarUl();
 }
