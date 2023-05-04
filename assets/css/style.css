@@ -2,11 +2,13 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #19A7CE; */
-    background-image: url("/assets/img/daniel-sessler-G2Df3hE0O4I-unsplash.jpg");
+    background-color: #19A7CE;
+
+    /* background-image: url("/assets/img/daniel-sessler-G2Df3hE0O4I-unsplash.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+    overflow-x: hidden;
 }
 
 main {
@@ -22,8 +24,8 @@ main {
     background-color: #fff;
     border-radius: 5px;
     text-align: center;
-    height: 15vh;
-    width: 17vw;
+    height: 24vh;
+    width: 20vw;
 }
 
 h1 {
@@ -41,10 +43,9 @@ h1 {
     width: 11vw;
     text-align: center;
     font-size: 0.8rem;
-    /* border: 0; */
-    border: 1px solid #19A7CE;
+    border: 0;
+    border-bottom: 1px solid #19A7CE;
     border-radius: 4px;
-
 }
 
 .botao-adicionar {
@@ -60,57 +61,55 @@ h1 {
     background-color: #A4D0A4;
 }
 
-.container {
-    margin-top: 10px;
-    background-color: #fff;
-    height: 20vh;
-    width: 17vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-ul {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-
-}
-
-
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-    border-bottom: 1px solid #E1EEDD;
-    box-shadow: 0px 0px 4px 0px;
-    width: 15vw;
-    margin-top: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .logo-concluir {
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
 
 .logo-excluir {
     width: 30px;
     height: 30px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
-
 
 span {
     font-size: 1rem;
 }
 
-.campo-tarefa {
+/* PARTE ADICIONAR TAREFA */
+
+.container {
+    margin-top: 40px;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    flex-direction: column;
+    padding: 0;
+
+}
+
+.lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #19376D;
+    box-shadow: 0px 1px 1px 1px;
+    gap: 80px;
+    width: 16vw;
+    margin: 10px 0;
+}
+
+.mudar-concluido {
+    background-color: #168716;
 }
