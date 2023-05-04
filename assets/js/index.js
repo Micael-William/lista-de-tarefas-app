@@ -1,10 +1,10 @@
 class Tarefa  {
-    elemento = [];
-    ul;
+    #elemento = [];
+    #ul;
 
     constructor(){
-        this.ul = document.querySelector(".container");
-        this.elemento = this.elemento;
+        this.#ul = document.querySelector(".container");
+        this.#elemento = this.#elemento
     }
 
     pegarValor(){
@@ -22,19 +22,19 @@ class Tarefa  {
     }
 
     adicionar(input){
-        this.elemento.push({itemTarefa: input});
+        this.#elemento.push({itemTarefa: input});
     }
 
     criarView(){
-        this.ul.innerHTML = ""
-        this.elemento.forEach((i, index) => {
-            this.ul.innerHTML += `
+        this.buscaUl.innerHTML = ""
+        this.buscaElemento.forEach((itemElemento, indexElemento) => {
+            this.buscaUl.innerHTML += `
                 <li>
                     <div class="lista">
                         <img class="logo-concluir" src="/assets/img/verificar.png" onClick="concluir()" alt="logo-concluir">
-                        <span>${i.itemTarefa}</span>
+                        <span>${itemElemento.itemTarefa}</span>
                     </div>
-                    <img class="logo-excluir" src="/assets/img/excluir (1).png" onClick="excluir(${index})" alt="logo-excluir">
+                    <img class="logo-excluir" src="/assets/img/excluir.png" onClick="excluir(${indexElemento})" alt="logo-excluir">
                 </li>
             `
         })
@@ -46,9 +46,22 @@ class Tarefa  {
        }
     }
 
-    // excluir(posicao){
-    //     conteudo.elemento.splice(posicao, 1);
-    // }
+    get buscaUl(){
+        return this.#ul;
+    }
+
+    set buscaUl(lista){
+        return this.#ul = lista;
+    }
+
+    get buscaElemento(){
+        return this.#elemento;
+    }
+
+    set buscaElemento(novoElemento){
+        return this.#elemento = novoElemento;
+    }
+
 
     limparCampo(valor,input){
         if(valor){
@@ -58,7 +71,7 @@ class Tarefa  {
 }
 
 const tarefa = new Tarefa();
-
+console.log(tarefa);
 
 const form = document.querySelector(".form");
 form.addEventListener("submit", (evento) => {
@@ -68,6 +81,7 @@ form.addEventListener("submit", (evento) => {
 })
 
 function excluir(posicao){
-    const verifica = tarefa.elemento.splice(posicao, 1);
-    tarefa.criarView();
+    tarefa.buscaElemento.splice(posicao, 1);
+    console.log(tarefa.buscaElemento)
+    tarefa.criarView()
 }
