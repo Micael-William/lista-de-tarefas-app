@@ -1,4 +1,27 @@
-﻿<h1>💻 Sobre o projeto</h1>
+﻿
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-github-open.svg" width="80" />
+
+## ⚙️ Estrutura do Projeto
+
+```bash
+assets
+│     ├── img 
+│   ├── css
+│   ├── style.css
+│   
+│  └── js
+│       └── index.js        
+└── Index.html         
+
+
+3 directories, 7 files
+```
+
+
+
+
+
+<h1>💻 Sobre o projeto</h1>
 
 
 ## ⚙️ Funcionalidades
