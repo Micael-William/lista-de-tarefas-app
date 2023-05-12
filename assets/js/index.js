@@ -9,7 +9,7 @@ class Tarefa  {
     }
 
     verificarUl(){
-        if(this.buscaUl.innerHTML === "" && this.buscaElemento.length == 0){
+        if(this.#ul.innerHTML === "" && this.#elemento.length == 0){
             const verifica = this.buscaUl.innerHTML= "Nenhuma tarefa adicionada";
             return verifica;
         }
@@ -31,12 +31,12 @@ class Tarefa  {
     }
 
     adicionar(input){
-        this.buscaElemento.push({itemTarefa: input});
+        this.#elemento.push({itemTarefa: input});
     }
 
     criarView(){
-        this.buscaUl.innerHTML = ""
-        this.buscaElemento.forEach((itemElemento, indexElemento) => {
+        this.#ul.innerHTML = ""
+        this.#elemento.forEach((itemElemento, indexElemento) => {
             this.buscaUl.innerHTML += `
                 <li>
                     <img class="logo-concluir" src="/assets/img/verificar.png" onClick="concluir()" alt="logo-concluir">
